@@ -2,3 +2,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.flags-container{
+
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.flags-container img{
+    width: 100px;
+}

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Country.css"
 
-const Country = ({country}) => {
-    const {name, flags, capital, region, area, population} = country;
+const Country = ({country, handleVisitedCountry, handleVisitedFlags}) => {
+    const {name, flags, capital, region, area, population,} = country;
     const [visited, setVisited] = useState(false);
     const handleVisited = () => {
 
@@ -11,14 +11,22 @@ const Country = ({country}) => {
         setVisited(!visited)
     }
     return (
-        <div className="country">
-          <h3>{name.common}</h3> 
+        
+        <div className={`country ${visited && "visited"}`}>
+          <h3 className={visited && "visited-name"}>{name.common}</h3> 
           <img src={flags.png} alt="" /> 
           <p>{capital}</p>
           <p>{region}</p>
           <p>{area}</p>
           <p>{population}</p>
-          <button onClick={handleVisited}>{visited ? "Visited" : "Going"}</button>
+          {/* jodi kono event handler ar maje peramitter an patay tahole sudu event handlar ta bosy diley hoilo ar jodo amra kono akta peramiter patray tahole akta arrow function a event handlar ta bosate hobe */}
+          <button onClick={() => handleVisitedCountry(country)}>Mark Visited</button>
+          <br /><br />
+          <button onClick={ () => handleVisitedFlags(country.flags.png)}>Visited Flags</button>
+          <br/><br/>
+          <button onClick={handleVisited} className={visited &&
+            "visited-btn"
+          }>{visited ? "Visited"  : "Going"}</button>
           {visited ? "I have visited Country":"I want to visit"}
         </div>
     );

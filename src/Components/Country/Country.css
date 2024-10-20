@@ -5,3 +5,20 @@
     padding: 20px;
     
 }
+.visited{
+    background-color: rgba(255, 228, 181, 0.479);
+    color: black;
+}
+.visited-name{
+    color: purple;
+}
+.visited-btn{
+    background-color: purple;
+    border-radius: 60px;
+}
+.visited-flags{
+    width: 100px;
+}
+.flag-container{
+    width: 100px;
+}
